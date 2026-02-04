@@ -1,0 +1,2 @@
+# navlog
+VFR Navigation Log
