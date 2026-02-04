@@ -31,7 +31,6 @@ function addLeg() {
     for (let i = 0; i < numColsLeg; i++) {
         const col = document.createElement('td');
         const input = document.createElement('input');
-        input.value = "360";
         col.appendChild(input);
         leg.appendChild(col);
     }
