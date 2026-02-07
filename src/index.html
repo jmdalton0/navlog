@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="main.js" defer></script>
     <title>Nav Log</title>
 </head>
@@ -17,8 +18,8 @@
         <h1>VFR Navigation Log</h1>
     </header>
 
-    <main>
-        <section>
+    <main id="log">
+        <section class="row justify-between">
             <table>
                 <thead>
                     <tr>
@@ -29,34 +30,23 @@
                         <th rowspan="1" colspan="1" class="w-m">GPH</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="th">Climb</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td class="th">Cruise</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td class="th">Descent</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                </tbody>
+                <tbody id="profile"></tbody>
             </table>
+
+            <div class="col">
+                <button onclick="reset()">Reset</button>
+                <!-- <button onclick="save()">Save</button> -->
+                <div class="row align-center mt">
+                    <div id="switch-calc-totals" onclick="toggleCalcTotals()" class="switch">
+                        <div class="switch-control"></div>
+                    </div>
+                    <p>Calculate Totals</p>
+                </div>
+            </div>
         </section>
 
         <section>
-            <table>
+            <table class="flex">
                 <thead>
                     <tr>
                         <th rowspan="1" colspan="2" class="w-m h-m">Fixes</th>
@@ -64,8 +54,11 @@
                 </thead>
                 <tbody id="fixes">
                     <tr>
-                        <td rowspan="1" colspan="2">
+                        <td rowspan="1" colspan="1" class="w-h">
                             <button onclick="addLeg()">Add</button>
+                        </td>
+                        <td rowspan="1" colspan="1" class="w-h">
+                            <button onclick="remLeg()" class="btn-rem">Remove</button>
                         </td>
                     </tr>
                 </tbody>
@@ -74,7 +67,6 @@
             <table class="height-fit">
                 <thead>
                     <tr>
-                        <th rowspan="2" colspan="1" class="w-xs"></th>
                         <th rowspan="2" colspan="1" class="w-m">Altitude</th>
                         <th rowspan="1" colspan="3" class="dark">Wind</th>
                         <th rowspan="2" colspan="1" class="w-s">TC</th>
@@ -105,23 +97,23 @@
 
                 <tbody id="legs">
                     <tr>
-                        <td rowspan="1" colspan="14" class="th h-m">
+                        <td rowspan="1" colspan="13" class="th h-m">
                             <p>Totals</p>
                         </td>
                         <td rowspan="1" colspan="1">
-                            <input type="text">
+                            <input id="dist-total" type="text">
                         </td>
                         <td rowspan="1" colspan="1" class="th h-m">
                             <p></p>
                         </td>
                         <td rowspan="1" colspan="1">
-                            <input type="text">
+                            <input id="time-total" type="text">
                         </td>
                         <td rowspan="1" colspan="1" class="th h-m">
                             <p></p>
                         </td>
                         <td rowspan="1" colspan="1">
-                            <input type="text">
+                            <input id="fuel-total" type="text">
                         </td>
                         <td rowspan="1" colspan="1" class="th h-m">
                             <p></p>

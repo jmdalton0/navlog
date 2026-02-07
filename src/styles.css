@@ -9,7 +9,9 @@
     --grey-3: #666;
     --grey-4: #444;
     --black: #111;
+    --blue: #0d6efd;
     --color-1: #155366;
+    --color-1-dk: #163a44;
     --color-2: #1e8f5a;
     --color-2-dk: #206e48;
 }
@@ -33,12 +35,13 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 section {
     display: flex;
     flex-direction: row;
+    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -53,7 +56,6 @@ p {
 button {
     font-size: 1rem;
     width: 100%;
-    height: 100%;
     padding: 0.5rem 1rem;
     font-weight: bold;
     color: var(--white);
@@ -68,11 +70,11 @@ button:hover {
 
 .btn-rem {
     color: var(--white);
-    background-color: var(--grey-3);
+    background-color: var(--color-1);
 }
 
 .btn-rem:hover {
-    background-color: var(--grey-4);
+    background-color: var(--color-1-dk);
 }
 
 table, th, td {
@@ -103,6 +105,10 @@ th {
     width: 8rem;
 }
 
+.w-h {
+    width: 50%;
+}
+
 .h-m {
     height: 3.5rem;
 }
@@ -126,4 +132,57 @@ input {
 
 .height-fit {
     height: fit-content;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.flex {
+    flex: 1;
+}
+
+.mt {
+    margin-top: 1rem;
+}
+
+.switch {
+    display: flex;
+    width: 50px;
+    margin-right: 1rem;
+    padding: 4px;
+    background-color: var(--grey-2);
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+.switch:hover {
+    cursor: pointer;
+}
+
+.switch-control {
+    width: 15px;
+    height: 15px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.switch-on {
+    justify-content: flex-end;
+    background-color: var(--blue);
 }
